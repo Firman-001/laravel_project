@@ -46,6 +46,9 @@
                     <div class="form-footer">
                         <button type="submit" class="btn btn-primary w-100">Sign in</button>
                     </div>
+                    <div class="form-footer">
+                        <button type="submit" class="">create account</button>
+                    </div>
                 </form>
             </div>
         </div>

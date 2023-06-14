@@ -23,6 +23,6 @@ Route::middleware(['guest'])->group(function () {
 
 Route::middleware(['auth'])->group(function () {
     Route::get("/signup", SignupComponent::class)->name("signup");
-    Route::get("/", HomeComponent::class)->name("dashboard");
-
 });
+
+Route::get("/", HomeComponent::class)->name("dashboard");
