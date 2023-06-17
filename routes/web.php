@@ -1,10 +1,9 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\Page\HomeComponent;
 use App\Http\Livewire\Page\LoginComponent;
-use Illuminate\Support\Facades\Route;
-
-
 
 /*
 |--------------------------------------------------------------------------
@@ -18,8 +17,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('welcome');
-Route::get("/login", LoginComponent::class)->name('login');
-Route::get("/dashboard", HomeComponent::class)->name('dashboard');
+Route::get('/logout', function () {
+    Auth::logout();
+    return redirect('/login');
+});
+Route::middleware(['guest'])->group(function () {
+    Route::get("/login", LoginComponent::class)->name("login");
+});
+Route::middleware(['auth'])->group(function () {
+    Route::get("/", HomeComponent::class)->name("dashboard");
+});
+
