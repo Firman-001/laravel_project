@@ -1,9 +1,10 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\Page\HomeComponent;
 use App\Http\Livewire\Page\LoginComponent;
-use App\Http\Livewire\Page\SignupComponent;
+use Illuminate\Support\Facades\Route;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -17,12 +18,8 @@ use App\Http\Livewire\Page\SignupComponent;
 */
 
 
-Route::middleware(['guest'])->group(function () {
-    Route::get("/login", LoginComponent::class)->name("login");
-});
-
-Route::middleware(['auth'])->group(function () {
-    Route::get("/signup", SignupComponent::class)->name("signup");
-});
-
-Route::get("/", HomeComponent::class)->name("dashboard");
+Route::get('/', function () {
+    return view('welcome');
+})->name('welcome');
+Route::get("/login", LoginComponent::class)->name('login');
+Route::get("/dashboard", HomeComponent::class)->name('dashboard');

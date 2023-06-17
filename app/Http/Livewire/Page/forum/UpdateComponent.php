@@ -8,6 +8,6 @@ class UpdateComponent extends Component
 {
     public function render()
     {
-        return view('livewire.page.forum.update-component');
+        return view('livewire.page.forum.update-component')->layout();
     }
 }

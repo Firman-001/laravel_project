@@ -1,5 +1,5 @@
-<div>
 
+<div>
     <div class="container container-tight py-4">
         <div>
             @if (session()->has('message'))
@@ -45,9 +45,6 @@
                     </div>
                     <div class="form-footer">
                         <button type="submit" class="btn btn-primary w-100">Sign in</button>
-                    </div>
-                    <div class="form-footer">
-                        <button type="submit" class="">create account</button>
                     </div>
                 </form>
             </div>
